@@ -1,16 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  hours: 1.5
-  professor: MyString
-  difficulty: 1.5
-
-two:
-  hours: 1.5
-  professor: MyString
-  difficulty: 1.5
-
-three:
   difficulty: 1.5
   workload: 1
   professor: MyString
@@ -18,7 +8,7 @@ three:
   user_id: 1
   schedulereview_id: 1
 
-four:
+two:
   difficulty: 1.5
   workload: 1
   professor: MyString
