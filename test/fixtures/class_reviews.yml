@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  difficulty: 1.5
+  workload: 1
+  professor: MyString
+  class_id: 1
+  user_id: 1
+  schedulereview_id: 1
+
+two:
+  difficulty: 1.5
+  workload: 1
+  professor: MyString
+  class_id: 1
+  user_id: 1
+  schedulereview_id: 1
