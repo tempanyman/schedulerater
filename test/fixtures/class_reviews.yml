@@ -9,3 +9,19 @@ two:
   hours: 1.5
   professor: MyString
   difficulty: 1.5
+
+three:
+  difficulty: 1.5
+  workload: 1
+  professor: MyString
+  class_id: 1
+  user_id: 1
+  schedulereview_id: 1
+
+four:
+  difficulty: 1.5
+  workload: 1
+  professor: MyString
+  class_id: 1
+  user_id: 1
+  schedulereview_id: 1
