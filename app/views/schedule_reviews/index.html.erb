@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schedule Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedule_reviews.each do |schedule_review| %>
+      <tr>
+        <td><%= link_to 'Show', schedule_review %></td>
+        <td><%= link_to 'Edit', edit_schedule_review_path(schedule_review) %></td>
+        <td><%= link_to 'Destroy', schedule_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Schedule Review', new_schedule_review_path %>

@@ -1,0 +1,17 @@
+<%= form_with(model: schedule_review, local: true) do |form| %>
+  <% if schedule_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule_review.errors.count, "error") %> prohibited this schedule_review from being saved:</h2>
+
+      <ul>
+      <% schedule_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
