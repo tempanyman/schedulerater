@@ -1,3 +1,3 @@
 class ClassReview < ApplicationRecord
-  belongs_to :ScheduleReview, :User, :Class
+  belongs_to :ScheduleReview, :User, :Course
 end
