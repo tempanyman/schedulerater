@@ -1,0 +1,2 @@
+module ScheduleReviewsHelper
+end
