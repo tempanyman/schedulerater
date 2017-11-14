@@ -1,0 +1,2 @@
+class ScheduleReviewsController < ApplicationController
+end
