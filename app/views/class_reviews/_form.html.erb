@@ -1,0 +1,17 @@
+<%= form_with(model: class_review, local: true) do |form| %>
+  <% if class_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_review.errors.count, "error") %> prohibited this class_review from being saved:</h2>
+
+      <ul>
+      <% class_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
