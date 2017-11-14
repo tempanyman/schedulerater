@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114002842) do
+ActiveRecord::Schema.define(version: 20171114003736) do
 
   create_table "class_reviews", force: :cascade do |t|
     t.float "difficulty"
