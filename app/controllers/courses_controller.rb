@@ -10,6 +10,9 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    this_course_id = params[:id]
+    @course = Course.find(this_course_id)
+    @reviews = ClassReview.find(:all, :conditions => ["course_id =?", this_course_id]).paginate(page: params[:page], per_page: 5)
   end
 
   # GET /courses/new

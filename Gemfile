@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'will_paginate', '~> 3.0'
+
 gem 'devise'
 
 group :development, :test do
