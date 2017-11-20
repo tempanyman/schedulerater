@@ -69,6 +69,7 @@ class ScheduleReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_review_params
-      params.fetch(:schedule_review, {})
+      # params.fetch(:schedule_review, {})
+      params.require(:schedule_review).permit(:user_id, :difficulty, :review)
     end
 end

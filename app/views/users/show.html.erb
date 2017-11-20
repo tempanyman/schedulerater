@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+<h2>Class of <%= @user.year %></h2>
+
+<h3>Schedule Reviews</h3>
+<% @user.schedule_reviews.each do |sched_rev| %>
+  <%= render sched_rev, schedule_review: sched_rev %>
+<% end %>
+
+<p><%= link_to 'New review', new_schedule_review_path %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

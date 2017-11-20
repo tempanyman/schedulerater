@@ -11,7 +11,27 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <p><%= render './class_reviews/class_review' %></p>
+
+  <%= form_for @schedule_review, url: schedule_reviews_path do |f| %>
+
+    <div class="field">
+      <%= f.label :user_id, 'Reviewing as: ' + current_user.name %><br/>
+      <%= f.hidden_field :user_id, value: current_user.id, readonly: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :difficulty %><br/>
+      <%= f.number_field :difficulty, step: :any, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :review %><br/>
+      <%= f.text_field :review %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
 <% end %>
