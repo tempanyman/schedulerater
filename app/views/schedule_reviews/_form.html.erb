@@ -22,7 +22,7 @@
 
     <div class="field">
       <%= f.label :difficulty %><br/>
-      <%= f.number_field :difficulty, step: :any, autofocus: true %>
+      <%= f.number_field :difficulty, step: :any, min: 1.0, max: 5.0, autofocus: true %>
     </div>
 
     <div class="field">
