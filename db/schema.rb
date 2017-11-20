@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114003736) do
+
+ActiveRecord::Schema.define(version: 20171116055432) do
 
   create_table "class_reviews", force: :cascade do |t|
     t.float "difficulty"
@@ -18,14 +19,18 @@ ActiveRecord::Schema.define(version: 20171114003736) do
     t.string "professor"
     t.integer "course_id"
     t.integer "user_id"
-    t.integer "schedulereview_id"
+    t.integer "schedule_review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "prereqs"
   end
 
-# Could not dump table "courses" because of following StandardError
-#   Unknown type 'department_id' for column 'department'
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "department_id"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
@@ -54,6 +59,8 @@ ActiveRecord::Schema.define(version: 20171114003736) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "year"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
