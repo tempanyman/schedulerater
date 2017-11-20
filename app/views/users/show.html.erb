@@ -6,9 +6,13 @@
 <h3>Schedule Reviews</h3>
 <% @user.schedule_reviews.each do |sched_rev| %>
   <%= render sched_rev, schedule_review: sched_rev %>
+  <tr>
+    <td><%= link_to 'Show', sched_rev %></td>
+    <td><%= link_to 'Edit', edit_schedule_review_path(sched_rev) %></td>
+    <td><%= link_to 'Destroy', sched_rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
 
 <p><%= link_to 'New review', new_schedule_review_path %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'All Users', users_path %>

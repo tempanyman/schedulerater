@@ -3,4 +3,4 @@
 <%= render 'schedule_review', schedule_review: @schedule_review %>
 
 <%= link_to 'Edit', edit_schedule_review_path(@schedule_review) %> |
-<%= link_to 'Back', schedule_reviews_path %>
+<%= link_to 'Back', user_path(current_user.id) %>

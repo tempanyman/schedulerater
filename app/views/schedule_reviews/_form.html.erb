@@ -30,6 +30,10 @@
       <%= f.text_field :review %>
     </div>
 
+    <input type="hidden"
+       value="<%= form_authenticity_token() %>"
+       name="authenticity_token"/>
+
     <div class="actions">
       <%= f.submit %>
     </div>
