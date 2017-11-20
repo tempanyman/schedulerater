@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= @course.name %>
+
+Reviews
+
+<%= render partial: "shared/class_review", collection: @products %>
+
 <%= link_to 'Back', courses_path %>

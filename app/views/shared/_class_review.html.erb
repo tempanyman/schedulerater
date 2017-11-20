@@ -1,0 +1,6 @@
+Review by: <% course.user.name%>
+Date: <% course.created_at %>
+Difficulty: <%= course.difficulty %>
+Workload: <%= course.workload %>
+Professor: <%= course.professor %>
+Suggested prerequisite classes: <% course.prereqs.each do |prereq| %> <%= prereq %> <% end %>
