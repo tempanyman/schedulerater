@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
+
 User.create!(id: 0, email: "michelle@berkeley.edu", name:"Michelle", year: 2, password: "password")
 User.create!(id: 1, email: "isabelle@berkeley.edu", name:"Isabelle", year: 2, password: "password")
 User.create!(id: 2, email: "anastasia@berkeley.edu", name:"Anastasia", year: 2, password: "password")
@@ -92,4 +92,5 @@ ClassReview.create!(id: 21, difficulty: 4, workload: 5, professor: "Woods", cour
 ClassReview.create!(id: 22, difficulty: 5, workload: 5, professor: "Alan Auerbach", course_id: 20, user_id: 2, schedule_review_id: 6, prereqs: ["Econ 100A", "Math 1B"])
 ClassReview.create!(id: 23, difficulty: 2, workload: 4, professor: "Sarah Harris", course_id: 21, user_id: 2, schedule_review_id: 6, prereqs: ["German 1"])
 #ClassReview.create!(id: , difficulty: , workload: , professor: , course_id: , user_id: , schedule_review_id: , prereqs: )
+
 
