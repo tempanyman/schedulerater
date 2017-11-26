@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="course_page">
+
+<h1 class="course_title"><%= @course.name %></h1>
+
+<h2 class="page_type">Reviews</h2>
+
+<%= render partial: "shared/class_review", collection: @reviews %>
+
+<%= will_paginate @reviews %>
+
+<%= link_to 'See all courses', courses_path %>
+</div>
