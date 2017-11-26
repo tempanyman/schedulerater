@@ -1,6 +1,20 @@
-Review by: <% course.user.name%>
-Date: <% course.created_at %>
-Difficulty: <%= course.difficulty %>
-Workload: <%= course.workload %>
-Professor: <%= course.professor %>
-Suggested prerequisite classes: <% course.prereqs.each do |prereq| %> <%= prereq %> <% end %>
+<div class="class_review">
+	<p class="rating">
+		Difficulty: <%= class_review.difficulty %> 
+	</p>
+	<p class="rating">
+		Workload: <%= class_review.workload %>
+	</p>
+	<p>
+		Suggested prerequisite classes: <%= class_review.prereqs.to_sentence %>
+	</p>
+	<p>
+		Professor: <%= class_review.professor %>
+	</p>
+	<p>
+		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
+	</p>
+	<p>
+		Date: <%= class_review.created_at.to_formatted_s(:long) %>
+	</p>
+</div>

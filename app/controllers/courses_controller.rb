@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.order(:name)
   end
 
   # GET /courses/1
@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   def show
     this_course_id = params[:id]
     @course = Course.find(this_course_id)
-    @reviews = ClassReview.find(:all, :conditions => ["course_id =?", this_course_id]).paginate(page: params[:page], per_page: 5)
+    @reviews = @course.class_reviews.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /courses/new
