@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= @course.name %>
+<div class="course_page">
 
-Reviews
+<h1 class="course_title"><%= @course.name %></h1>
 
-<%= render partial: "shared/class_review", collection: @products %>
+<h2 class="page_type">Reviews</h2>
 
-<%= link_to 'Back', courses_path %>
+<%= render partial: "shared/class_review", collection: @reviews %>
+
+<%= will_paginate @reviews %>
+
+<%= link_to 'See all courses', courses_path %>
+</div>
