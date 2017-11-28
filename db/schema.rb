@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114002842) do
+ActiveRecord::Schema.define(version: 20171114003736) do
 
   create_table "class_reviews", force: :cascade do |t|
     t.float "difficulty"
@@ -24,8 +24,12 @@ ActiveRecord::Schema.define(version: 20171114002842) do
     t.string "prereqs"
   end
 
-# Could not dump table "courses" because of following StandardError
-#   Unknown type 'department_id' for column 'department'
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "department_id"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name"

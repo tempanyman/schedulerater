@@ -15,6 +15,7 @@ class ClassReviewsController < ApplicationController
   # GET /class_reviews/new
   def new
     @class_review = ClassReview.new
+    @course = Course.new
   end
 
   # GET /class_reviews/1/edit
@@ -59,6 +60,10 @@ class ClassReviewsController < ApplicationController
       format.html { redirect_to class_reviews_url, notice: 'Class review was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def course_params
+    params.require(:name).permit(:department_id, class_reviews_attributes: [:id, :difficulty, :workload, :professor])
   end
 
   private
