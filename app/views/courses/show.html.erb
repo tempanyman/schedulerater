@@ -4,6 +4,9 @@
 
 <h1 class="course_title"><%= @course.name %></h1>
 
+<h3 class="stat">Average difficulty: <%= @avg_difficulty %> </h3>
+<h3 class="stat">Average workload: <%= @avg_workload %> </h3>
+
 <h2 class="page_type">Reviews</h2>
 
 <%= render partial: "shared/class_review", collection: @reviews %>
