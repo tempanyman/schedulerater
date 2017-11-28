@@ -15,6 +15,7 @@ class ScheduleReviewsController < ApplicationController
   # GET /schedule_reviews/new
   def new
     @schedule_review = ScheduleReview.new
+    @class_review = ClassReview.new
   end
 
   # GET /schedule_reviews/1/edit
@@ -25,6 +26,7 @@ class ScheduleReviewsController < ApplicationController
   # POST /schedule_reviews.json
   def create
     @schedule_review = ScheduleReview.new(schedule_review_params)
+
 
     respond_to do |format|
       if @schedule_review.save
@@ -59,6 +61,10 @@ class ScheduleReviewsController < ApplicationController
       format.html { redirect_to user_path(current_user.id), notice: 'Schedule review was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def class_review_params
+    params.require(:difficulty).permit(:professor, schedule_review_attributes[:id, :review])
   end
 
   private

@@ -15,6 +15,7 @@ class ClassReviewsController < ApplicationController
   # GET /class_reviews/new
   def new
     @class_review = ClassReview.new
+    @course = Course.new
   end
 
   # GET /class_reviews/1/edit
@@ -109,6 +110,9 @@ class ClassReviewsController < ApplicationController
     puts 'foo'
     puts params
     redirect_to search_path(:search_term => params[:search_term])
+
+  def course_params
+    params.require(:name).permit(:department_id, class_reviews_attributes: [:id, :difficulty, :workload, :professor])
   end
 
   private

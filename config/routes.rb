@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :courses
   get '/search/:search_term', to: 'class_reviews#search', as: 'search'
   post '/search', to: 'class_reviews#search_redirect', as: 'search_redirect'
+
+  get '/create', to: "schedule_reviews#create"
+  get '/new', to: "schedule_reviews#new"
 end

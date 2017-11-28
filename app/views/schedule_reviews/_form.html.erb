@@ -1,39 +1,16 @@
-<%= form_with(model: schedule_review, local: true) do |form| %>
-  <% if schedule_review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(schedule_review.errors.count, "error") %> prohibited this schedule_review from being saved:</h2>
-
-      <ul>
-      <% schedule_review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= form_for @schedule_review, url: schedule_reviews_path do |f| %>
-
-    <div class="field">
-      <%= f.label :user_id, 'Reviewing as: ' + current_user.name %><br/>
-      <%= f.hidden_field :user_id, value: current_user.id, readonly: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :difficulty %><br/>
-      <%= f.number_field :difficulty, step: :any, min: 1.0, max: 5.0, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :review %><br/>
-      <%= f.text_field :review %>
-    </div>
-
-    <input type="hidden"
-       value="<%= form_authenticity_token() %>"
-       name="authenticity_token"/>
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
+<%= nested_form_for @schedule_review do |f| %>
+    <% f.simple_fields_for :class_reviews do |class_review| %>
+        <% class_review.simple_fields_for :courses do |course| %>
+            <% course.label :name%>
+            <% course.text_field :name %>
+        <% end %>
+        <% class_review.label :professor %>
+        <% class_review.text_field :professor %>
+        <% class_review.label :difficulty %>
+        <% class_review.number_field :difficulty, step: any, min: 1.0, max: 5.0 %>
+        <% class_review.label :workload %>
+        <% class_review.number_field :workload, step: any, min: 0.0, max: 20.0 %>
+    <% end %>
+    <% f.label :review %>
+    <% f.text_field :review %>
 <% end %>
