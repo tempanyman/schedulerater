@@ -61,6 +61,52 @@ class ClassReviewsController < ApplicationController
     end
   end
 
+  def search
+    search = params[:search_term]
+    searches = search.split(/\s*,\s*/)
+    @course_results = Set.new
+    @schedule_results = Set.new
+    searches.each do |term|
+      courses = []
+      has_course_number = search.count("0-9") > 0
+      if has_course_number
+        course_number = term[/\d+/]
+        department = term.split(course_number).first.rstrip
+        dept = Department.where('name like ?', '%'+department+'%')
+        if dept.empty?
+          dept = Department.where('abbreviation like ?', '%'+department+'%')
+        end
+        if not dept.empty?
+          course_number = term.split(department)[-1].strip
+          courses = dept[0].courses.where('name like ?', '%'+course_number+'%')
+        end
+      else
+        dept = Department.where('name like ?', '%'+term.strip+'%')
+        if dept.empty?
+          dept = Department.where('abbreviation like ?', '%'+term.strip+'%')
+        end
+        if not dept.empty?
+          courses = dept[0].courses
+        end
+      end
+      @course_results.merge(courses.to_set)
+    end
+    @course_results.each do |course|
+      reviews = course.class_reviews
+      schedules = []
+      reviews.each do |rev|
+        schedules.append(rev.schedule_review)
+      end
+      @schedule_results.merge(schedules.to_set)
+    end
+  end
+
+  def search_redirect
+    puts 'foo'
+    puts params
+    redirect_to search_path(:search_term => params[:search_term])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_class_review
