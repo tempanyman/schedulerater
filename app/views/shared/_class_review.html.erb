@@ -12,9 +12,9 @@
 		Professor: <%= class_review.professor %>
 	</p>
 	<p>
-		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
+		Date: <%= class_review.created_at.to_formatted_s(:long) %>
 	</p>
 	<p>
-		Date: <%= class_review.created_at.to_formatted_s(:long) %>
+		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
 	</p>
 </div>
