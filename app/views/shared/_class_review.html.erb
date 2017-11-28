@@ -1,9 +1,9 @@
 <div class="class_review">
 	<p class="rating">
-		Difficulty: <%= class_review.difficulty %> 
+		Difficulty: <%= class_review.difficulty %>/10 
 	</p>
 	<p class="rating">
-		Workload: <%= class_review.workload %>
+		Workload: <%= class_review.workload %>/10
 	</p>
 	<p>
 		Suggested prerequisite classes: <%= class_review.prereqs.to_sentence %>
@@ -12,9 +12,9 @@
 		Professor: <%= class_review.professor %>
 	</p>
 	<p>
-		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
+		Date: <%= class_review.created_at.to_formatted_s(:long) %>
 	</p>
 	<p>
-		Date: <%= class_review.created_at.to_formatted_s(:long) %>
+		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
 	</p>
 </div>

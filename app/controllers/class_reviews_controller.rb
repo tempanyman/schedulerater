@@ -77,8 +77,10 @@ class ClassReviewsController < ApplicationController
           dept = Department.where('abbreviation like ?', '%'+department+'%')
         end
         if not dept.empty?
-          course_number = term.split(department)[-1].strip
-          courses = dept[0].courses.where('name like ?', '%'+course_number+'%')
+          dept.each do |dep|
+            course_number = term.split(department)[-1].strip
+            courses = courses.concat(dep.courses.where('name like ?', '%'+course_number+'%'))
+          end
         end
       else
         dept = Department.where('name like ?', '%'+term.strip+'%')
@@ -86,7 +88,9 @@ class ClassReviewsController < ApplicationController
           dept = Department.where('abbreviation like ?', '%'+term.strip+'%')
         end
         if not dept.empty?
-          courses = dept[0].courses
+          dept.each do |dep|
+            courses = courses.concat(dep.courses)
+          end
         end
       end
       @course_results.merge(courses.to_set)

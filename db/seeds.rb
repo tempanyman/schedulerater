@@ -13,7 +13,7 @@ User.create!(id: 3, email: "allen@berkeley.edu", name:"Allen", year: 2020, passw
 
 #User.create(email: , name:, year: )
 
-Department.create!(id: 0, name: "Computer Science", abbreviation: "COMPSCI")
+Department.create!(id: 0, name: "Computer Science", abbreviation: "COMPSCI (CS)")
 Department.create!(id: 1, name: "Physics", abbreviation: "PHYS")
 Department.create!(id: 2, name: "Linguistics", abbreviation: "LINGUIS")
 Department.create!(id: 3, name: "Electrical Engineering", abbreviation: "EE")
