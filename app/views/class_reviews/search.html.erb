@@ -1,0 +1,22 @@
+<h2>Courses</h2>
+<% if @course_results.empty? %>
+	<p>No course results. </p>
+<% else %>
+	<% @course_results.each do |course| %>
+		 <p class="course_name"><%= link_to course.name, course %></li>
+	<% end %>
+<% end %>
+
+<h2>Schedules</h2>
+<% if @schedule_results.empty? %>
+	<p>No schedule results. </p>
+<% else %>
+	<% @schedule_results.each do |schedule| %>
+		<p class="schedule_name"><%= link_to schedule.user.name, schedule.user %></li>
+		<ul class="schedule_list">
+			<% schedule.class_reviews.each do |classrev| %>
+			<li> <%= classrev.course.name %> </li>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>
