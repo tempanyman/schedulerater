@@ -1,8 +1,6 @@
-<p>
-  Difficulty: <%= schedule_review.difficulty %><br/>
-  Review: <%= schedule_review.review %>
-</p>
-
 <% schedule_review.class_reviews.each do |class_rev| %>
-  <%= render class_review %>
+  <%= render class_rev %>
 <% end %>
+
+<strong>Overall Difficulty:</strong> <%= schedule_review.difficulty %><br/>
+Review: <%= schedule_review.review %><br/>

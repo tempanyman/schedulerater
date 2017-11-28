@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(id: 0, email: "michelle@berkeley.edu", name:"Michelle", year: 2, password: "password")
-User.create!(id: 1, email: "isabelle@berkeley.edu", name:"Isabelle", year: 2, password: "password")
-User.create!(id: 2, email: "anastasia@berkeley.edu", name:"Anastasia", year: 2, password: "password")
-User.create!(id: 3, email: "allen@berkeley.edu", name:"Allen", year: 2, password: "password")
+User.create!(id: 0, email: "michelle@berkeley.edu", name:"Michelle", year: 2020, password: "password")
+User.create!(id: 1, email: "isabelle@berkeley.edu", name:"Isabelle", year: 2020, password: "password")
+User.create!(id: 2, email: "anastasia@berkeley.edu", name:"Anastasia", year: 2020, password: "password")
+User.create!(id: 3, email: "allen@berkeley.edu", name:"Allen", year: 2020, password: "password")
 
 #User.create(email: , name:, year: )
 
@@ -34,7 +34,7 @@ Course.create!(id: 5, name: "Computer Science 61A", department_id: 0)
 Course.create!(id: 6, name: "Electrical Engineering 16A", department_id: 3)
 Course.create!(id: 7, name: "College Writing R4B", department_id: 4)
 Course.create!(id: 8, name: "Computer Science 61B", department_id: 0)
-Course.create!(id: 9, name: "Electrical Engineering 16A", department_id: 3)
+Course.create!(id: 9, name: "Electrical Engineering 16B", department_id: 3)
 Course.create!(id: 10, name: "Psychology 1", department_id: 5)
 Course.create!(id: 11, name: "Music 29", department_id: 6)
 Course.create!(id: 12, name: "Computer Science 70", department_id: 0)
@@ -50,7 +50,7 @@ Course.create!(id: 21, name: "German 2", department_id: 9)
 #Course.create!(id: , name: , department_id: )
 
 
-ScheduleReview.create!(id: 0, user_id: 0, difficulty: 7, review: "Overall not too bad and pretty rewarding. Would suggest this combo if you're looking for a decently heavy semester that's bearable. Ling 100 is a grat breadth!")
+ScheduleReview.create!(id: 0, user_id: 0, difficulty: 7, review: "Overall not too bad and pretty rewarding. Would suggest this combo if you're looking for a decently heavy semester that's bearable. Ling 100 is a great breadth!")
 
 ScheduleReview.create!(id: 1, user_id: 3, difficulty: 6, review: "Manageable first-semester schedule that leaves time for other pursuits/fun/getting used to college. Personally spent the most time/energy on EE 16A, may be different for people who are familiar with/good at linear algebra and circuits. Would not really recommend taking a COLWRIT class unless you have to.")
 ScheduleReview.create!(id: 2, user_id: 3, difficulty: 8, review: "Highly recommend Josh Hug for CS 61B. Again, spent the most time/energy on EE 16B because I'm absolutely terrible at circuits, but would still recommend the class for its very cool hands-on/practical nature. Psych and music are super easy breadths depending on how much you enjoy the material.")
@@ -92,5 +92,3 @@ ClassReview.create!(id: 21, difficulty: 4, workload: 5, professor: "Woods", cour
 ClassReview.create!(id: 22, difficulty: 5, workload: 5, professor: "Alan Auerbach", course_id: 20, user_id: 2, schedule_review_id: 6, prereqs: ["Econ 100A", "Math 1B"])
 ClassReview.create!(id: 23, difficulty: 2, workload: 4, professor: "Sarah Harris", course_id: 21, user_id: 2, schedule_review_id: 6, prereqs: ["German 1"])
 #ClassReview.create!(id: , difficulty: , workload: , professor: , course_id: , user_id: , schedule_review_id: , prereqs: )
-
-
