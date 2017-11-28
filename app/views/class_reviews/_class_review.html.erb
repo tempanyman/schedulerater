@@ -1,9 +1,8 @@
-<!-- <%= Course.find(class_review.course_id).name %>
-<%= render partial: "shared/class_review", locals: {class_review: class_review} %> -->
+<!-- <%= render partial: "shared/class_review", locals: {class_review: class_review} %> -->
 
 <div class="class_review">
   <p class="rating">
-    <%= link_to Course.find(class_review.course_id).name, course_path(class_review.course_id) %>
+    <%= link_to class_review.course.name, course_path(class_review.course_id) %>
   </p>
   <p class="rating">
     Difficulty: <%= class_review.difficulty %>/10

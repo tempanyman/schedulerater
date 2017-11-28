@@ -1,6 +1,6 @@
 <div class="class_review">
 	<p class="rating">
-		Difficulty: <%= class_review.difficulty %>/10 
+		Difficulty: <%= class_review.difficulty %>/10
 	</p>
 	<p class="rating">
 		Workload: <%= class_review.workload %>/10
@@ -15,6 +15,6 @@
 		Date: <%= class_review.created_at.to_formatted_s(:long) %>
 	</p>
 	<p>
-		Review by: <%= link_to class_review.user.name, user_path(class_review.user) %>
+		Review by: <%= link_to class_review.user.name, class_review.schedule_review %>
 	</p>
 </div>

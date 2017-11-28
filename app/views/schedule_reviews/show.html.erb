@@ -2,5 +2,9 @@
 
 <%= render 'schedule_review', schedule_review: @schedule_review %>
 
-<%= link_to 'Edit', edit_schedule_review_path(@schedule_review) %> |
-<%= link_to 'Back', user_path(current_user.id) %>
+<% if @schedule_review.user == current_user %>
+  <%= link_to 'Edit', edit_schedule_review_path(@schedule_review) %> |
+  <%= link_to 'Back', user_path(current_user.id) %>
+<% else %>
+  <%= link_to 'View all of ' + @schedule_review.user.name + '\'s reviews', @schedule_review.user %>
+<% end %>

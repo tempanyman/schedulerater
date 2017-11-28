@@ -18,7 +18,7 @@
 	<p>No schedule results. </p>
 <% else %>
 	<% @schedule_results.each do |schedule| %>
-		<p class="schedule_name"><%= link_to schedule.user.name, schedule.user %></li>
+		<p class="schedule_name"><%= link_to schedule.user.name, schedule %></li>
 		<ul class="schedule_list">
 			<% schedule.class_reviews.each do |classrev| %>
 			<li> <%= classrev.course.name %> </li>
