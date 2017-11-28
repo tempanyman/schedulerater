@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
     this_course_id = params[:id]
     @course = Course.find(this_course_id)
     @reviews = @course.class_reviews.paginate(page: params[:page], per_page: 5)
-    @avg_difficulty = @reviews.map{|review| review.difficulty}.reduce(0, :+)/@reviews.length.to_f
+    @avg_difficulty = @reviews.map{|review| review.difficulty}.reduce(0, :+)/@reviews.length.to_f 
     @avg_workload = @reviews.map{|review| review.workload}.reduce(0, :+)/@reviews.length.to_f
   end
 
