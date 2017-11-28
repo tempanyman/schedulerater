@@ -67,13 +67,25 @@ header a:hover h1 {
     width: 400px;
     padding: 5px;
     margin-bottom: 10px;
-    border-left: thick solid #7396ce; 
+    border-left: thick solid #7396ce;
     padding-left: 10px;
 
 }
 
 .class_review .rating {
     font-weight: bold;
+}
+
+.schedule_review {
+  width: 400px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-left: thick solid #003399;
+  padding-left: 10px;
+}
+
+.schedule_review .rating {
+  font-weight: bold;
 }
 
 body {

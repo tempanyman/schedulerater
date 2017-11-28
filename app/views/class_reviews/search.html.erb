@@ -1,3 +1,9 @@
+<%= form_tag(search_redirect_path, method: "post") do %>
+  <%= label_tag(:search_term, "Search for class(es):") %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <h2>Courses</h2>
 <% if @course_results.empty? %>
 	<p>No course results. </p>
