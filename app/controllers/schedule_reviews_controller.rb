@@ -25,17 +25,14 @@ class ScheduleReviewsController < ApplicationController
   # POST /schedule_reviews
   # POST /schedule_reviews.json
   def create
-    @schedule_review = ScheduleReview.new(schedule_review_params)
+    # @schedule_review = ScheduleReview.new(schedule_review_params)
+    @schedule_review = ScheduleReview.create(difficulty: params[:difficulty], review: params[:review], user: current_user)
 
-
-    respond_to do |f|
-      if @schedule_review.save
-        f.html { redirect_to @schedule_review, notice: 'Schedule review was successfully created.' }
-        f.json { render :show, status: :created, location: @schedule_review }
-      else
-        f.html { render :new }
-        f.json { render json: @schedule_review.errors, status: :unprocessable_entity }
-      end
+    if @schedule_review.errors.blank?
+      redirect_to schedule_review_path
+    else
+      flash[:error] = @schedule_review.errors.full_messages.to_sentence
+      redirect_to schedule_reviews_new_path
     end
   end
 

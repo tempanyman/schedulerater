@@ -1,4 +1,4 @@
-<%= form_for(setup_schedule_review(schedule_review)) do |f| %>
+<%= form_for(setup_schedule_review(@schedule_review)) do |f| %>
     <%= f.fields_for :class_reviews do |class_review| %>
         <%= class_review.fields_for :courses do |course| %>
             <%= course.label :name %>
