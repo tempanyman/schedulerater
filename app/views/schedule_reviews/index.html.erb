@@ -2,6 +2,7 @@
 
 <h1>Schedule Reviews</h1>
 
+<% @schedule_reviews = @schedule_reviews.sort {|r1,r2| r2 <=> r1} %>
 <% @schedule_reviews.each do |schedule| %>
     <p class="schedule_name"><%= link_to schedule.user.name, schedule %></li>
     <ul class="schedule_list">
