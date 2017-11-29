@@ -2,7 +2,7 @@ Title: Schedule Rater
 
 Team Members: Michelle Hwang, Isabelle Ju, Allen Tong, Anastasia Gorovaya
 
-Demo Link:
+Demo Link: https://www.youtube.com/watch?v=BpYAyE_ymkw&
 
 Idea: We are creating a website where students can come and rate their class schedules in terms of difficulty and can read other students’ reviews to plan their class schedules.
 
