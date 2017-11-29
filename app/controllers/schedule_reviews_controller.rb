@@ -28,13 +28,13 @@ class ScheduleReviewsController < ApplicationController
     @schedule_review = ScheduleReview.new(schedule_review_params)
 
 
-    respond_to do |format|
+    respond_to do |f|
       if @schedule_review.save
-        format.html { redirect_to @schedule_review, notice: 'Schedule review was successfully created.' }
-        format.json { render :show, status: :created, location: @schedule_review }
+        f.html { redirect_to @schedule_review, notice: 'Schedule review was successfully created.' }
+        f.json { render :show, status: :created, location: @schedule_review }
       else
-        format.html { render :new }
-        format.json { render json: @schedule_review.errors, status: :unprocessable_entity }
+        f.html { render :new }
+        f.json { render json: @schedule_review.errors, status: :unprocessable_entity }
       end
     end
   end
