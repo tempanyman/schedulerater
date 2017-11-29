@@ -110,6 +110,7 @@ class ClassReviewsController < ApplicationController
     puts 'foo'
     puts params
     redirect_to search_path(:search_term => params[:search_term])
+  end
 
   def course_params
     params.require(:name).permit(:department_id, class_reviews_attributes: [:id, :difficulty, :workload, :professor])
