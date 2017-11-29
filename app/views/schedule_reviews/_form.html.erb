@@ -7,14 +7,14 @@
         <%= class_review.label :professor %>
         <%= class_review.text_field :professor %> <br />
         <%= class_review.label :difficulty %>
-        <%= class_review.number_field :difficulty, step: :any, min: 1.0, max: 5.0 %> <br />
+        <%= class_review.number_field :difficulty, min: 0, max: 10 %> <br />
         <%= class_review.label :workload %>
-        <%= class_review.number_field :workload, step: :any, min: 0.0, max: 20.0 %> <br /><br />
+        <%= class_review.number_field :workload, min: 0, max: 10 %> <br />
 
         <% if class_review.object.persisted? %>
             <%= class_review.check_box :_destroy %>
-            <%= class_review.label :_destroy, "Destroy" %>
-        <% end %>
+            <%= class_review.label :_destroy, "Delete" %>
+        <% end %><br />
     <% end %>
     <%= f.label :review %>
     <%= f.text_area :review, :cols => "120", :rows => "10" %>

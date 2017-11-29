@@ -32,7 +32,7 @@ class ScheduleReviewsController < ApplicationController
       redirect_to schedule_review_path
     else
       flash[:error] = @schedule_review.errors.full_messages.to_sentence
-      redirect_to schedule_reviews_new_path
+      redirect_to new_schedule_review_path
     end
   end
 
