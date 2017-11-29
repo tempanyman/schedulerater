@@ -7,6 +7,7 @@
 <% if @user == current_user %>
   <p><%= link_to 'New review', new_schedule_review_path %></p>
 <% end %>
-<% @user.schedule_reviews.each do |sched_rev| %>
+<% reviews = @user.schedule_reviews.sort {|r1,r2| r2 <=> r1} %>
+<% reviews.each do |sched_rev| %>
   <%= render sched_rev, schedule_review: sched_rev %><br/>
 <% end %>

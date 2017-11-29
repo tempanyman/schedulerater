@@ -17,7 +17,8 @@
 <% if @schedule_results.empty? %>
 	<p>No schedule results. </p>
 <% else %>
-	<% @schedule_results.each do |schedule| %>
+  <% @schedule_results = @schedule_results.sort {|r1,r2| r2 <=> r1} %>
+  <% @schedule_results.each do |schedule| %>
 		<p class="schedule_name"><%= link_to schedule.user.name, schedule %></li>
 		<ul class="schedule_list">
 			<% schedule.class_reviews.each do |classrev| %>
