@@ -4,7 +4,7 @@ class ScheduleReview < ApplicationRecord
   has_many :courses, through: :class_reviews
   accepts_nested_attributes_for :class_reviews,
                                 :allow_destroy => true,
-                                :reject_if => lambda { |course| course[:name].blank? }
+                                :reject_if => lambda { |course| course[:class_reviews_attributes][:courses][:course_id].blank? }
   validates :difficulty, presence: true
   validates :review, presence: true
 end

@@ -25,10 +25,13 @@ class ScheduleReviewsController < ApplicationController
   # POST /schedule_reviews
   # POST /schedule_reviews.json
   def create
-    puts "stuff is happneing!!!!1"
-    #puts params
-    puts params[:schedule_review][:review]
-    @schedule_review = ScheduleReview.create( difficulty: 1, review: params[:schedule_review][:review], user: current_user)
+    @schedule_review = ScheduleReview.create( difficulty: 3, review: params[:schedule_review][:review], user: current_user)
+    params[:schedule_review][:class_reviews_attributes].each do |num, class_rev|
+      if not class_rev[:courses][:course_id].blank?
+      ClassReview.create(difficulty: class_rev[:difficulty], workload: class_rev[:workload], professor: class_rev[:professor],
+                         user: current_user, course: Course.find(class_rev[:courses][:course_id]), schedule_review: @schedule_review)
+      end
+    end
     puts @schedule_review.errors.full_messages.to_sentence
     if @schedule_review.errors.blank?
       redirect_to root_path
