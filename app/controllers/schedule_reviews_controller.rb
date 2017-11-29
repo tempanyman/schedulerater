@@ -25,11 +25,13 @@ class ScheduleReviewsController < ApplicationController
   # POST /schedule_reviews
   # POST /schedule_reviews.json
   def create
-    # @schedule_review = ScheduleReview.new(schedule_review_params)
-    @schedule_review = ScheduleReview.create(difficulty: params[:difficulty], review: params[:review], user: current_user)
-
+    puts "stuff is happneing!!!!1"
+    #puts params
+    puts params[:schedule_review][:review]
+    @schedule_review = ScheduleReview.create( difficulty: 1, review: params[:schedule_review][:review], user: current_user)
+    puts @schedule_review.errors.full_messages.to_sentence
     if @schedule_review.errors.blank?
-      redirect_to schedule_review_path
+      redirect_to root_path
     else
       flash[:error] = @schedule_review.errors.full_messages.to_sentence
       redirect_to new_schedule_review_path
